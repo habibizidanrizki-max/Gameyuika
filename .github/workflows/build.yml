@@ -27,6 +27,7 @@ jobs:
           buildozer init || true
           sed -i 's/#requirements = python3,pygame/requirements = python3,pygame,pillow/' buildozer.spec
           sed -i 's/#p4a.branch = stable/p4a.branch = master/' buildozer.spec
+          echo "android.accept_sdk_license = True" >> buildozer.spec
 
       - name: Build APK with Buildozer
         run: |
